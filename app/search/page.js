@@ -6,7 +6,6 @@ import ProductsDisplay from "@/components/productDisplay";
 export default function SearchComponent() {
   return (
     <>
-      <MainNavigation />
       <p>Seach for someQuery</p>
       <ProductsDisplay list={[]} />
       <Footer />

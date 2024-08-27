@@ -8,7 +8,7 @@ export default async function ProductsDisplay({ products }) {
         products.map((product) => (
           <Link
             href={`/products/${product?.id}`}
-            className="list-none block "
+            className="hover:underline list-none block "
             key={product.id}
           >
             <div>

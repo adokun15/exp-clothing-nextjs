@@ -1,9 +1,6 @@
-import MainNavigation from "@/components/MainNavigation";
-
 export default function ProfilePic() {
   return (
     <>
-      <MainNavigation />
       <div className="mx-[5%] py-6 md:mx-[20%] my-10 px-4 bg-white shadow shadow-slate-400">
         <h1 className="text-3xl">Add a Profile Picture</h1>
         <form className="*:block my-3 *:font-oswald space-y-5">
