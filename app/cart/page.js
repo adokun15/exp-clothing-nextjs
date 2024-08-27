@@ -1,6 +1,5 @@
 import CartFooter from "@/components/CartFooter";
 import Footer from "@/components/Footer";
-import MainNavigation from "@/components/MainNavigation";
 
 const QuantityIncrement = () => {
   return <div>qty: 5</div>;
@@ -8,7 +7,6 @@ const QuantityIncrement = () => {
 export default function CartPage() {
   return (
     <>
-      <MainNavigation />
       <section>
         <h3>Your Cart</h3>
         <button>Continue Shopping</button>

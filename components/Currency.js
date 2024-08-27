@@ -18,8 +18,8 @@ export default function CurrencyExchange() {
   const [toggle, settogle] = useState(false);
 
   return (
-    <div className="relative space-y-3">
-      <div className="relative flex gap-2">
+    <div className="relative md:block hidden space-y-3">
+      <div className=" flex gap-2">
         <p className="underline">{currentlySelected || "USD | UNITED STATE"}</p>
         <button onClick={() => settogle((p) => !p)}>
           {!toggle ? (

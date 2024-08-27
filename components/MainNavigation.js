@@ -27,8 +27,10 @@ export default function MainNavigation() {
             ExP Clothing
           </Link>
         </div>
-        <div className="flex first:mr-5 gap-8 *:block items-center">
-          <CurrencyExchange />
+        <div className="flex items-center first:mr-5 gap-8 *:block ">
+          <div className="relative hidden">
+            <CurrencyExchange />
+          </div>
           <button
             onClick={() => toggleSearch(true)}
             className="block cursor-pointer"

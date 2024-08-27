@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { getSingleProduct } from "@/action/product/getSingleProduct";
 import SubmitButton from "@/components/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDotCircle } from "@fortawesome/free-regular-svg-icons";
+import { faListDots } from "@fortawesome/free-solid-svg-icons";
+import Footer from "@/components/Footer";
 
 //Server action
 const SingleProductpage = async ({ params }) => {
@@ -22,7 +26,7 @@ const SingleProductpage = async ({ params }) => {
         </div>
         <div className="md:w-2/5 py-7">
           <h2 className="text-3xl">{product?.product_name}</h2>
-          <p className="mt-4 bg-slate-400 font-thin text">${product.price}</p>
+          <p className="mt-4 text-slate-400 font-thin text">${product.price}</p>
           <section className="*:list-none space-y-3 my-5">
             <li>
               <p>
@@ -48,17 +52,29 @@ const SingleProductpage = async ({ params }) => {
           <section>
             <form>
               <input
+                type="number"
                 className={`my-2 ring-2 focus:ring-4 block ring-black ring-offset-1 py-2 px-3 caret-blaack outline-none rounded w-full`}
                 placeholder="Enter Quantity"
               />
-              <SubmitButton>Add to cart</SubmitButton>
+              <SubmitButton className="my-4 py-4  rounded w-full bg-black text-white ">
+                Add to cart
+              </SubmitButton>
             </form>
           </section>
-          <section className="my-4">
-            <h3>{product.descriptions?.header}</h3>
+          <section className="tracking-wide my-4 space-y-4">
+            <h3 className="tracking-wide leading-[2.4rem] text-xl">
+              {product.descriptions?.header}
+            </h3>
+            {product?.descriptions?.list_of_desc.map((desc) => (
+              <li key={desc} className="list-none">
+                <FontAwesomeIcon icon={faListDots} />
+                <span className="tracking-wide">{desc}</span>
+              </li>
+            ))}
           </section>
         </div>
       </article>
+      <Footer />
     </>
   );
 };

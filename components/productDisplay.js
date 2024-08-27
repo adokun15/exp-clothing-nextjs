@@ -8,7 +8,7 @@ export default async function ProductsDisplay({ products }) {
         products.map((product) => (
           <Link
             href={`/products/${product?.id}`}
-            className="list-none block text-3xl"
+            className="list-none block "
             key={product.id}
           >
             <div>
@@ -19,7 +19,12 @@ export default async function ProductsDisplay({ products }) {
                 alt={product?.product_name}
               />
             </div>
-            <p>{product?.product_name}</p>
+            <p className="text-[14px] text-balance tracking-tight text-center">
+              {product?.product_name}
+            </p>
+            <p className="text-[14px] tracking-tight text-center">
+              ${product?.price}
+            </p>
           </Link>
         ))}
     </div>
