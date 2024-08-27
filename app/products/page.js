@@ -5,13 +5,13 @@ import ProductsDisplay from "@/components/productDisplay";
 export default async function Home() {
   const Products = await getProducts();
 
-  console.log(Products);
-  if (Products?.error || !Products) {
-    return <p>{Products?.error || "Something went Wrong"}</p>;
+  if (Products?.error) {
+    return <p>{Products.error}</p>;
   }
 
   return (
     <>
+      <p>Products</p>
       <ProductsDisplay products={Products} />
       <Footer />
     </>
